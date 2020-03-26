@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>
+            PWA APP
+        </title>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <script src="script/main.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                        // Registration was successful
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+        </script>
+        <form>
+
+            <input type="button"
+            value="Blanco"
+            onClick="document.bgColor = '#FFFFFF';document.fgColor='#000000';">
+            
+            <input type="button"
+            value="Verde"
+            onClick="document.bgColor = '#008000';document.fgColor='#FFFF00';">
+            
+            <input type="button"
+            value="Azul"
+            onClick="document.bgColor = '#0000FF';document.fgColor='#00FFFF';">
+            
+            <input type="button"
+            value="Rojo"
+            onClick="document.bgColor = '#FF0000';document.fgColor='#FFFF00';">
+            
+            <input type="button"
+            value="Negro"
+            onClick="document.bgColor = '#000000';document.fgColor='#FFFFFF';">
+            
+            <input type="button"
+            value="Amarillo"
+            onClick="document.bgColor = '#FFFF00';document.fgColor='#CD2626';">
+            
+            
+            </form>
+    </head>
+    <body>
+        <h1>PWA y la web que se puede instalar</h1>
+    </body>
+</html>
